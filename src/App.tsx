@@ -9,16 +9,13 @@ import Index from "./pages/index.tsx";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "./components/auth/AuthProvider.tsx";
 import Login from "./pages/Login.tsx";
-import { UnifiedProgramManagement } from "./components/features/ProgramManagement/UnifiedProgramManagement.tsx";
-import ProgramOutComes from "./components/features/programOutcomes/ProgramOutComes.tsx";
-import CourseDetails from "./components/features/CourseDetails/CourseDetails.tsx";
+
 import Dashboard from "./pages/index.tsx";
 import MetaTags from "./components/MetaTags.tsx";
-import SyllabusReview from "./components/features/syllabus-extraction/SyllabusReview.tsx";
+
 import AIQuestionGeneratorPage from "./pages/AIQuestionGenerator.tsx";
-import Questions from "./components/features/generatedQuestions/page.tsx";
 import ComingSoon from "./pages/ComingSoon.tsx";
-import QuestionBatchDetails from "./components/features/generatedQuestions/QuestionBatchDetails.tsx";
+
 
 
 
@@ -83,8 +80,7 @@ const App = () => {
                         {/* <Route path="*" element={<NotFound />} /> */}
 
                         {/* General routes */}
-                        <Route path="/q-bank" element={<Questions />} />
-                        <Route path="/q-bank/:uuid" element={<QuestionBatchDetails />} />
+                        
                         <Route path="/question-generator" element={<AIQuestionGeneratorPage />} />
                    
 
@@ -105,22 +101,6 @@ const App = () => {
                         </Route>
 
                 
-              
-              
-                        <Route
-                          path="/program-management"
-                          element={<UnifiedProgramManagement organizationId="1" />}
-                        />
-                  
-                        <Route path="/program-outcomes/:programId" element={<ProgramOutComes />} />
-                        <Route
-                          path="program-outcomes/:programId/courses/:courseId"
-                          element={<CourseDetails />}
-                        />
-                        <Route
-                          path="/program-outcomes/extracted-syllabus/:fileId"
-                          element={<SyllabusReview />}
-                        />
                         <Route path="/profile" element={<Profile />} />
                       </Routes>
                     </AppLayout>
