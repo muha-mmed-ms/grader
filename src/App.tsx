@@ -14,20 +14,16 @@ import ProgramOutComes from "./components/features/programOutcomes/ProgramOutCom
 import CourseDetails from "./components/features/CourseDetails/CourseDetails.tsx";
 import Dashboard from "./pages/index.tsx";
 import MetaTags from "./components/MetaTags.tsx";
-import QuestionBankPage from "./pages/QuestionBank.tsx";
 import SyllabusReview from "./components/features/syllabus-extraction/SyllabusReview.tsx";
 import AIQuestionGeneratorPage from "./pages/AIQuestionGenerator.tsx";
-import QuestionHistoryPage from "./pages/QuestionHistory.tsx";
 import Questions from "./components/features/generatedQuestions/page.tsx";
 import ComingSoon from "./pages/ComingSoon.tsx";
 import QuestionBatchDetails from "./components/features/generatedQuestions/QuestionBatchDetails.tsx";
-import FacultyExamsPage from "./pages/FacultyExams.tsx";
-import StudentExam from "./pages/StudentExam.tsx";
-import ExamPage from "./components/student/exam/index.tsx";
-import ExamResult from "./components/student/exam/exam-result/index.tsx";
-import FacultyExamAnalyticsPage from "./pages/FacultyExamAnalytics.tsx";
+
+
+
 import Profile from "./pages/Profile.tsx";
-import ClassWiseAnalysis from "./pages/ClassWiseAnalysis.tsx";
+
 import DashboardPage from "./components/features/Dashboard/index.tsx";
 import GraderPage from "./pages/Grader.tsx";
 import AnswerSheetPage from "./pages/AnswerKeysPage.tsx";
@@ -90,15 +86,8 @@ const App = () => {
                         <Route path="/q-bank" element={<Questions />} />
                         <Route path="/q-bank/:uuid" element={<QuestionBatchDetails />} />
                         <Route path="/question-generator" element={<AIQuestionGeneratorPage />} />
-                        <Route path="/question-history" element={<QuestionHistoryPage />} />
+                   
 
-                        {/* Other admin pages remain unguarded as per your ask */}
-                        <Route path="admin/exams" element={<FacultyExamsPage />} />
-                        <Route path="admin/class-analysis" element={<ClassWiseAnalysis />} />
-                        <Route
-                          path="admin/exams/analytics/:examId"
-                          element={<FacultyExamAnalyticsPage />}
-                        />
 
                         {/* ✅ ONLY GRADER is guarded */}
                         <Route element={<AdminOnly />}>
@@ -115,14 +104,14 @@ const App = () => {
                           />
                         </Route>
 
-                        {/* Student section */}
-                        <Route path="/exams" element={<StudentExam />} />
-                        <Route path="/exams/:id" element={<ExamPage />} />
+                
+              
+              
                         <Route
                           path="/program-management"
                           element={<UnifiedProgramManagement organizationId="1" />}
                         />
-                        <Route path="/exam/result/:uuid/:userId" element={<ExamResult />} />
+                  
                         <Route path="/program-outcomes/:programId" element={<ProgramOutComes />} />
                         <Route
                           path="program-outcomes/:programId/courses/:courseId"
