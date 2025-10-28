@@ -5,15 +5,12 @@ import { QueryClient } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import AppLayout from "@/components/Layout/AppLayout";
-import Index from "./pages/index.tsx";
-import NotFound from "./pages/NotFound";
 import { AuthProvider } from "./components/auth/AuthProvider.tsx";
 import Login from "./pages/Login.tsx";
 
 import Dashboard from "./pages/index.tsx";
 import MetaTags from "./components/MetaTags.tsx";
 
-import AIQuestionGeneratorPage from "./pages/AIQuestionGenerator.tsx";
 import ComingSoon from "./pages/ComingSoon.tsx";
 
 
@@ -77,13 +74,7 @@ const App = () => {
                       <Routes>
                         <Route path="/" element={isAdmin ? <DashboardPage /> : <Dashboard />} />
                         <Route path="*" element={<ComingSoon />} />
-                        {/* <Route path="*" element={<NotFound />} /> */}
-
-                        {/* General routes */}
-                        
-                        <Route path="/question-generator" element={<AIQuestionGeneratorPage />} />
                    
-
 
                         {/* ✅ ONLY GRADER is guarded */}
                         <Route element={<AdminOnly />}>
